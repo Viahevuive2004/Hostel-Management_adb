@@ -13,6 +13,7 @@ import AttendanceView from "./screens/attendanceView";
 import ProfileView from "./screens/profileView";
 import UserListView from "./screens/userListView";
 import UserEditView from "./screens/userEditView";
+import AIChatView from "./screens/aiChatView";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
       <Header />
       <main className="py-3">
         <Container>
+          <Route path="/ai-chat" component={AIChatView} />
           <Route path="/user/:userId/edit" component={UserEditView} />
           <Route path="/userList" component={UserListView} />
           <Route path="/profile" component={ProfileView} />

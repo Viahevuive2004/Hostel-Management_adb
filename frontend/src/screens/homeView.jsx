@@ -36,35 +36,31 @@ const HomeView = ({ match, history }) => {
 
   return (
     <>
-      <>
-        <Container>
-          <Row className="justify-content-md-center">
-            <Col xs lg="2"></Col>
-            <Col md="auto">
-              <ButtonGroup toggle>
-                {["Grid", "Table"].map((type) => (
-                  <ToggleButton
-                    key={type}
-                    type="radio"
-                    variant="secondary"
-                    name="radio"
-                    value={type}
-                    checked={(isGrid ? "Grid" : "Table") === type}
-                    onChange={(e) =>
-                      setIsGrid(e.target.value === "Grid" ? true : false)
-                    }
-                  >
-                    {type === "Grid" ? <> Grid</> : <> Table </>}
-                  </ToggleButton>
-                ))}
-              </ButtonGroup>
-            </Col>
-            <Col xs lg="2"></Col>
-          </Row>
-        </Container>
-      </>
+      <Row className="justify-content-md-center">
+        <Col xs lg="2"></Col>
+        <Col md="auto">
+          <ButtonGroup toggle>
+            {["Lưới", "Bảng"].map((type) => (
+              <ToggleButton
+                key={type}
+                type="radio"
+                variant="secondary"
+                name="radio"
+                value={type}
+                checked={(isGrid ? "Lưới" : "Bảng") === type}
+                onChange={(e) =>
+                  setIsGrid(e.target.value === "Lưới" ? true : false)
+                }
+              >
+                {type === "Lưới" ? <> Lưới</> : <> Bảng </>}
+              </ToggleButton>
+            ))}
+          </ButtonGroup>
+        </Col>
+        <Col xs lg="2"></Col>
+      </Row>
 
-      <h1>Students</h1>
+      <h1>Sinh Viên</h1>
       {loading ? (
         <Loading />
       ) : error ? (

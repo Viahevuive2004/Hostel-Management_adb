@@ -18,18 +18,18 @@ const AttendanceView = () => {
   };
   return (
     <>
-      <h2>Take Attendance</h2>
+      <h2>Điểm Danh</h2>
       <Form onSubmit={submitHandler} inline>
         <Form.Control
           type="text"
           value={roomNo}
           name="roomNo"
-          placeholder="Enter RoomNo"
+          placeholder="Nhập Số Phòng"
           className="mr-sm-2 ml-sm-5"
           onChange={(e) => changeRoomNo(e)}
         ></Form.Control>
         <Button type="submit" onClick={submitHandler}>
-          Get Students
+          Lấy Sinh Viên
         </Button>
       </Form>
       <AttendanceTable roomNo={roomNo} />

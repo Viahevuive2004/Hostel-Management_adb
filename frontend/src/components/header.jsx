@@ -21,7 +21,7 @@ const Header = () => {
       <Navbar bg="dark" variant="dark" expand="lg" collapseOnSelect>
         <Container>
           <LinkContainer to="/">
-            <Navbar.Brand>NSD Solutions</Navbar.Brand>
+            <Navbar.Brand>Giải Pháp NSD</Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -30,36 +30,39 @@ const Header = () => {
             )}
             <Nav className="ml-auto">
               {userInfo && (
-                <NavDropdown title="More">
+                <NavDropdown title="Thêm">
                   <LinkContainer to="/attendance">
-                    <NavDropdown.Item>Attendance</NavDropdown.Item>
+                    <NavDropdown.Item>Điểm Danh</NavDropdown.Item>
                   </LinkContainer>
                   <LinkContainer to="/addStudent">
-                    <NavDropdown.Item>Add Student</NavDropdown.Item>
+                    <NavDropdown.Item>Thêm Sinh Viên</NavDropdown.Item>
                   </LinkContainer>
                   <LinkContainer to="/analysis">
-                    <NavDropdown.Item>View Analysis</NavDropdown.Item>
+                    <NavDropdown.Item>Xem Phân Tích</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to="/ai-chat">
+                    <NavDropdown.Item>🤖 Trợ lý AI</NavDropdown.Item>
                   </LinkContainer>
                 </NavDropdown>
               )}
               {userInfo ? (
                 <NavDropdown title={userInfo.name} id="username">
                   <LinkContainer to="/profile">
-                    <NavDropdown.Item>Profile</NavDropdown.Item>
+                    <NavDropdown.Item>Hồ Sơ</NavDropdown.Item>
                   </LinkContainer>
                   {userInfo.isAdmin && (
                     <LinkContainer to="/userList">
-                      <NavDropdown.Item>Users List</NavDropdown.Item>
+                      <NavDropdown.Item>Danh Sách Người Dùng</NavDropdown.Item>
                     </LinkContainer>
                   )}
                   <NavDropdown.Item onClick={logoutHandler}>
-                    Logout
+                    Đăng Xuất
                   </NavDropdown.Item>
                 </NavDropdown>
               ) : (
                 <LinkContainer to="/login">
                   <Nav.Link>
-                    <i className="fas fa-user"></i> Sign In
+                    <i className="fas fa-user"></i> Đăng Nhập
                   </Nav.Link>
                 </LinkContainer>
               )}

@@ -96,7 +96,7 @@ const AddStudentView = () => {
   return (
     <>
       <Link to="/" className="btn btn-light my-3">
-        Go Back
+        Quay Lại
       </Link>
 
       {loading || loadingUpdate ? (
@@ -105,27 +105,27 @@ const AddStudentView = () => {
         <>
           {errorUpdate && <Message variant="danger">{errorUpdate}</Message>}
           <FormContainer>
-            <h1>{isEdit ? "Edit Student" : "Add Student"}</h1>
+            <h1>{isEdit ? "Sửa Sinh Viên" : "Thêm Sinh Viên"}</h1>
             {loading && <Loading />}
             {error && <Message variant="danger">{error}</Message>}
             <Form onSubmit={submitHandler}></Form>
             <Form.Group controlId="name">
-              <Form.Label>Name</Form.Label>
+              <Form.Label>Họ Tên</Form.Label>
               <Form.Control
                 type="name"
-                placeholder="Enter name"
+                placeholder="Nhập họ tên"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               ></Form.Control>
             </Form.Group>
             <Form.Group controlId="status">
-              <Form.Label>Status</Form.Label>
+              <Form.Label>Trạng Thái</Form.Label>
               <Form.Control
                 as="select"
                 value={status}
                 onChange={(e) => setStatus(e.target.value)}
               >
-                {["Hostel", "Outside", "Home"].map((x) => (
+                {["Ký Túc Xá", "Bên Ngoài", "Nhà"].map((x) => (
                   <option key={x + 1} value={x + 1}>
                     {x}
                   </option>
@@ -133,79 +133,79 @@ const AddStudentView = () => {
               </Form.Control>
             </Form.Group>
             <Form.Group controlId="address">
-              <Form.Label>Address</Form.Label>
+              <Form.Label>Địa Chỉ</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Enter address"
+                placeholder="Nhập địa chỉ"
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
               ></Form.Control>
             </Form.Group>
             <Form.Group controlId="city">
-              <Form.Label>City</Form.Label>
+              <Form.Label>Thành Phố</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Enter city"
+                placeholder="Nhập thành phố"
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
               ></Form.Control>
             </Form.Group>
             <Form.Group controlId="contact">
-              <Form.Label>Contact</Form.Label>
+              <Form.Label>Số Điện Thoại</Form.Label>
               <Form.Control
                 type="number"
-                placeholder="Enter phone number"
+                placeholder="Nhập số điện thoại"
                 value={contact}
                 onChange={(e) => setContact(e.target.value)}
               ></Form.Control>
             </Form.Group>
             <Form.Group controlId="fatherContact">
-              <Form.Label>Father Contact</Form.Label>
+              <Form.Label>Số ĐT Bố</Form.Label>
               <Form.Control
                 type="number"
-                placeholder="Enter Father Phone Number"
+                placeholder="Nhập số ĐT bố"
                 value={fatherContact}
                 onChange={(e) => setFatherContact(e.target.value)}
               ></Form.Control>
             </Form.Group>
             <Form.Group controlId="roomNo">
-              <Form.Label>Room No</Form.Label>
+              <Form.Label>Số Phòng</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Enter Room no"
+                placeholder="Nhập số phòng"
                 value={roomNo}
                 onChange={(e) => setRoomNo(e.target.value)}
               ></Form.Control>
             </Form.Group>
             <Form.Group controlId="b">
-              <Form.Label>Block Number</Form.Label>
+              <Form.Label>Số Khu</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Enter Block Number"
+                placeholder="Nhập số khu"
                 value={blockNo}
                 onChange={(e) => setBlockNo(e.target.value)}
               ></Form.Control>
             </Form.Group>
             <Form.Group controlId="image">
-              <Form.Label>Image Url</Form.Label>
+              <Form.Label>URL Ảnh</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Enter Image Url"
+                placeholder="Nhập URL ảnh"
                 value={image}
                 onChange={(e) => setImage(e.target.value)}
               ></Form.Control>
             </Form.Group>
             <Form.Group controlId="category">
-              <Form.Label>Category</Form.Label>
+              <Form.Label>Chuyên Ngành</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Enter Stream"
+                placeholder="Nhập chuyên ngành"
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
               ></Form.Control>
             </Form.Group>
             <Button type="submit" variant="primary" onClick={submitHandler}>
-              {isEdit ? "Update" : "Add Student"}
+              {isEdit ? "Cập Nhật" : "Thêm Sinh Viên"}
             </Button>
           </FormContainer>
         </>
